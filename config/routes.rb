@@ -1,4 +1,35 @@
 Rails.application.routes.draw do
+  resources :otg_clients
+  resources :otg_buslogics
+  resources :otg_crypsts
+  resources :otg_errs
+  resources :otg_inpvals
+  resources :otg_sesses
+  resources :otg_authzs
+  resources :otg_authns
+  resources :otg_idents
+  resources :otg_configs
+  resources :otg_infos
+  resources :otg_buslogics
+  resources :otg_inpvals
+  resources :otg_configs
+  resources :otg_infos
+  resources :otg_infos
+  resources :targets
+  resources :projects
+  resources :otg_clients
+  resources :otg_buslogics
+  resources :otg_crypsts
+  resources :otg_errs
+  resources :otg_inpvals
+  resources :otg_sesses
+  resources :otg_authzs
+  resources :otg_authns
+  resources :otg_idents
+  resources :otg_configs
+  resources :otg_infos
+  resources :targets
+  resources :projects
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
