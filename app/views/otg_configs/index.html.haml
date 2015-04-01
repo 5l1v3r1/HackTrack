@@ -1,0 +1,149 @@
+%h1 Listing otg_configs
+
+%table
+  %thead
+    %tr
+      %th Target
+      %th One
+      %th One description
+      %th One findings
+      %th One liklihood
+      %th One consequence
+      %th One risk
+      %th One recommendations
+      %th One current
+      %th Two
+      %th Two description
+      %th Two findings
+      %th Two liklihood
+      %th Two consequence
+      %th Two risk
+      %th Two recommendations
+      %th Two current
+      %th Three
+      %th Three description
+      %th Three findings
+      %th Three liklihood
+      %th Three consequence
+      %th Three risk
+      %th Three recommendations
+      %th Three current
+      %th Four
+      %th Four description
+      %th Four findings
+      %th Four liklihood
+      %th Four consequence
+      %th Four risk
+      %th Four recommendations
+      %th Four current
+      %th Five
+      %th Five description
+      %th Five findings
+      %th Five liklihood
+      %th Five consequence
+      %th Five risk
+      %th Five recommendations
+      %th Five current
+      %th Six
+      %th Six description
+      %th Six findings
+      %th Six liklihood
+      %th Six consequence
+      %th Six risk
+      %th Six recommendations
+      %th Six current
+      %th Seven
+      %th Seven description
+      %th Seven findings
+      %th Seven liklihood
+      %th Seven consequence
+      %th Seven risk
+      %th Seven recommendations
+      %th Seven current
+      %th Eight
+      %th Eight description
+      %th Eight findings
+      %th Eight liklihood
+      %th Eight consequence
+      %th Eight risk
+      %th Eight recommendations
+      %th Eight current
+      %th
+      %th
+      %th
+
+  %tbody
+    - @otg_configs.each do |otg_config|
+      %tr
+        %td= otg_config.target_id
+        %td= otg_config.one_id
+        %td= otg_config.one_description
+        %td= otg_config.one_findings
+        %td= otg_config.one_liklihood
+        %td= otg_config.one_consequence
+        %td= otg_config.one_risk
+        %td= otg_config.one_recommendations
+        %td= otg_config.one_current
+        %td= otg_config.two_id
+        %td= otg_config.two_description
+        %td= otg_config.two_findings
+        %td= otg_config.two_liklihood
+        %td= otg_config.two_consequence
+        %td= otg_config.two_risk
+        %td= otg_config.two_recommendations
+        %td= otg_config.two_current
+        %td= otg_config.three_id
+        %td= otg_config.three_description
+        %td= otg_config.three_findings
+        %td= otg_config.three_liklihood
+        %td= otg_config.three_consequence
+        %td= otg_config.three_risk
+        %td= otg_config.three_recommendations
+        %td= otg_config.three_current
+        %td= otg_config.four_id
+        %td= otg_config.four_description
+        %td= otg_config.four_findings
+        %td= otg_config.four_liklihood
+        %td= otg_config.four_consequence
+        %td= otg_config.four_risk
+        %td= otg_config.four_recommendations
+        %td= otg_config.four_current
+        %td= otg_config.five_id
+        %td= otg_config.five_description
+        %td= otg_config.five_findings
+        %td= otg_config.five_liklihood
+        %td= otg_config.five_consequence
+        %td= otg_config.five_risk
+        %td= otg_config.five_recommendations
+        %td= otg_config.five_current
+        %td= otg_config.six_id
+        %td= otg_config.six_description
+        %td= otg_config.six_findings
+        %td= otg_config.six_liklihood
+        %td= otg_config.six_consequence
+        %td= otg_config.six_risk
+        %td= otg_config.six_recommendations
+        %td= otg_config.six_current
+        %td= otg_config.seven_id
+        %td= otg_config.seven_description
+        %td= otg_config.seven_findings
+        %td= otg_config.seven_liklihood
+        %td= otg_config.seven_consequence
+        %td= otg_config.seven_risk
+        %td= otg_config.seven_recommendations
+        %td= otg_config.seven_current
+        %td= otg_config.eight_id
+        %td= otg_config.eight_description
+        %td= otg_config.eight_findings
+        %td= otg_config.eight_liklihood
+        %td= otg_config.eight_consequence
+        %td= otg_config.eight_risk
+        %td= otg_config.eight_recommendations
+        %td= otg_config.eight_current
+        %td= link_to 'Show', otg_config
+        %td= link_to 'Edit', edit_otg_config_path(otg_config)
+        %td= link_to 'Destroy', otg_config, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Otg config', new_otg_config_path

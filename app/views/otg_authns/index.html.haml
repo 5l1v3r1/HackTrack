@@ -1,0 +1,181 @@
+%h1 Listing otg_authns
+
+%table
+  %thead
+    %tr
+      %th Target
+      %th One
+      %th One description
+      %th One findings
+      %th One liklihood
+      %th One consequence
+      %th One risk
+      %th One recommendations
+      %th One current
+      %th Two
+      %th Two description
+      %th Two findings
+      %th Two liklihood
+      %th Two consequence
+      %th Two risk
+      %th Two recommendations
+      %th Two current
+      %th Three
+      %th Three description
+      %th Three findings
+      %th Three liklihood
+      %th Three consequence
+      %th Three risk
+      %th Three recommendations
+      %th Three current
+      %th Four
+      %th Four description
+      %th Four findings
+      %th Four liklihood
+      %th Four consequence
+      %th Four risk
+      %th Four recommendations
+      %th Four current
+      %th Five
+      %th Five description
+      %th Five findings
+      %th Five liklihood
+      %th Five consequence
+      %th Five risk
+      %th Five recommendations
+      %th Five current
+      %th Six
+      %th Six description
+      %th Six findings
+      %th Six liklihood
+      %th Six consequence
+      %th Six risk
+      %th Six recommendations
+      %th Six current
+      %th Seven
+      %th Seven description
+      %th Seven findings
+      %th Seven liklihood
+      %th Seven consequence
+      %th Seven risk
+      %th Seven recommendations
+      %th Seven current
+      %th Eight
+      %th Eight description
+      %th Eight findings
+      %th Eight liklihood
+      %th Eight consequence
+      %th Eight risk
+      %th Eight recommendations
+      %th Eight current
+      %th Nine
+      %th Nine description
+      %th Nine findings
+      %th Nine liklihood
+      %th Nine consequence
+      %th Nine risk
+      %th Nine recommendations
+      %th Nine current
+      %th Ten
+      %th Ten description
+      %th Ten findings
+      %th Ten liklihood
+      %th Ten consequence
+      %th Ten risk
+      %th Ten recommendations
+      %th Ten current
+      %th
+      %th
+      %th
+
+  %tbody
+    - @otg_authns.each do |otg_authn|
+      %tr
+        %td= otg_authn.target_id
+        %td= otg_authn.one_id
+        %td= otg_authn.one_description
+        %td= otg_authn.one_findings
+        %td= otg_authn.one_liklihood
+        %td= otg_authn.one_consequence
+        %td= otg_authn.one_risk
+        %td= otg_authn.one_recommendations
+        %td= otg_authn.one_current
+        %td= otg_authn.two_id
+        %td= otg_authn.two_description
+        %td= otg_authn.two_findings
+        %td= otg_authn.two_liklihood
+        %td= otg_authn.two_consequence
+        %td= otg_authn.two_risk
+        %td= otg_authn.two_recommendations
+        %td= otg_authn.two_current
+        %td= otg_authn.three_id
+        %td= otg_authn.three_description
+        %td= otg_authn.three_findings
+        %td= otg_authn.three_liklihood
+        %td= otg_authn.three_consequence
+        %td= otg_authn.three_risk
+        %td= otg_authn.three_recommendations
+        %td= otg_authn.three_current
+        %td= otg_authn.four_id
+        %td= otg_authn.four_description
+        %td= otg_authn.four_findings
+        %td= otg_authn.four_liklihood
+        %td= otg_authn.four_consequence
+        %td= otg_authn.four_risk
+        %td= otg_authn.four_recommendations
+        %td= otg_authn.four_current
+        %td= otg_authn.five_id
+        %td= otg_authn.five_description
+        %td= otg_authn.five_findings
+        %td= otg_authn.five_liklihood
+        %td= otg_authn.five_consequence
+        %td= otg_authn.five_risk
+        %td= otg_authn.five_recommendations
+        %td= otg_authn.five_current
+        %td= otg_authn.six_id
+        %td= otg_authn.six_description
+        %td= otg_authn.six_findings
+        %td= otg_authn.six_liklihood
+        %td= otg_authn.six_consequence
+        %td= otg_authn.six_risk
+        %td= otg_authn.six_recommendations
+        %td= otg_authn.six_current
+        %td= otg_authn.seven_id
+        %td= otg_authn.seven_description
+        %td= otg_authn.seven_findings
+        %td= otg_authn.seven_liklihood
+        %td= otg_authn.seven_consequence
+        %td= otg_authn.seven_risk
+        %td= otg_authn.seven_recommendations
+        %td= otg_authn.seven_current
+        %td= otg_authn.eight_id
+        %td= otg_authn.eight_description
+        %td= otg_authn.eight_findings
+        %td= otg_authn.eight_liklihood
+        %td= otg_authn.eight_consequence
+        %td= otg_authn.eight_risk
+        %td= otg_authn.eight_recommendations
+        %td= otg_authn.eight_current
+        %td= otg_authn.nine_id
+        %td= otg_authn.nine_description
+        %td= otg_authn.nine_findings
+        %td= otg_authn.nine_liklihood
+        %td= otg_authn.nine_consequence
+        %td= otg_authn.nine_risk
+        %td= otg_authn.nine_recommendations
+        %td= otg_authn.nine_current
+        %td= otg_authn.ten_id
+        %td= otg_authn.ten_description
+        %td= otg_authn.ten_findings
+        %td= otg_authn.ten_liklihood
+        %td= otg_authn.ten_consequence
+        %td= otg_authn.ten_risk
+        %td= otg_authn.ten_recommendations
+        %td= otg_authn.ten_current
+        %td= link_to 'Show', otg_authn
+        %td= link_to 'Edit', edit_otg_authn_path(otg_authn)
+        %td= link_to 'Destroy', otg_authn, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Otg authn', new_otg_authn_path

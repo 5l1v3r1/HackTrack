@@ -1,0 +1,69 @@
+%h1 Listing otg_authzs
+
+%table
+  %thead
+    %tr
+      %th Target
+      %th One
+      %th One description
+      %th One findings
+      %th One liklihood
+      %th One consequence
+      %th One risk
+      %th One recommendations
+      %th One current
+      %th Two
+      %th Two description
+      %th Two findings
+      %th Two liklihood
+      %th Two consequence
+      %th Two risk
+      %th Two recommendations
+      %th Two current
+      %th Three
+      %th Three description
+      %th Three findings
+      %th Three liklihood
+      %th Three consequence
+      %th Three risk
+      %th Three recommendations
+      %th Three current
+      %th
+      %th
+      %th
+
+  %tbody
+    - @otg_authzs.each do |otg_authz|
+      %tr
+        %td= otg_authz.target_id
+        %td= otg_authz.one_id
+        %td= otg_authz.one_description
+        %td= otg_authz.one_findings
+        %td= otg_authz.one_liklihood
+        %td= otg_authz.one_consequence
+        %td= otg_authz.one_risk
+        %td= otg_authz.one_recommendations
+        %td= otg_authz.one_current
+        %td= otg_authz.two_id
+        %td= otg_authz.two_description
+        %td= otg_authz.two_findings
+        %td= otg_authz.two_liklihood
+        %td= otg_authz.two_consequence
+        %td= otg_authz.two_risk
+        %td= otg_authz.two_recommendations
+        %td= otg_authz.two_current
+        %td= otg_authz.three_id
+        %td= otg_authz.three_description
+        %td= otg_authz.three_findings
+        %td= otg_authz.three_liklihood
+        %td= otg_authz.three_consequence
+        %td= otg_authz.three_risk
+        %td= otg_authz.three_recommendations
+        %td= otg_authz.three_current
+        %td= link_to 'Show', otg_authz
+        %td= link_to 'Edit', edit_otg_authz_path(otg_authz)
+        %td= link_to 'Destroy', otg_authz, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Otg authz', new_otg_authz_path

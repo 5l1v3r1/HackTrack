@@ -1,0 +1,24 @@
+= simple_form_for(@otg_err) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :target_id
+    = f.input :one_id
+    = f.input :one_description
+    = f.input :one_findings
+    = f.input :one_liklihood
+    = f.input :one_consequence
+    = f.input :one_risk
+    = f.input :one_recommendations
+    = f.input :one_current
+    = f.input :two_id
+    = f.input :two_description
+    = f.input :two_findings
+    = f.input :two_liklihood
+    = f.input :two_consequence
+    = f.input :two_risk
+    = f.input :two_recommendations
+    = f.input :two_current
+
+  .form-actions
+    = f.button :submit

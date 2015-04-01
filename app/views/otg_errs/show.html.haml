@@ -1,0 +1,57 @@
+%p#notice= notice
+
+%p
+  %b Target:
+  = @otg_err.target_id
+%p
+  %b One:
+  = @otg_err.one_id
+%p
+  %b One description:
+  = @otg_err.one_description
+%p
+  %b One findings:
+  = @otg_err.one_findings
+%p
+  %b One liklihood:
+  = @otg_err.one_liklihood
+%p
+  %b One consequence:
+  = @otg_err.one_consequence
+%p
+  %b One risk:
+  = @otg_err.one_risk
+%p
+  %b One recommendations:
+  = @otg_err.one_recommendations
+%p
+  %b One current:
+  = @otg_err.one_current
+%p
+  %b Two:
+  = @otg_err.two_id
+%p
+  %b Two description:
+  = @otg_err.two_description
+%p
+  %b Two findings:
+  = @otg_err.two_findings
+%p
+  %b Two liklihood:
+  = @otg_err.two_liklihood
+%p
+  %b Two consequence:
+  = @otg_err.two_consequence
+%p
+  %b Two risk:
+  = @otg_err.two_risk
+%p
+  %b Two recommendations:
+  = @otg_err.two_recommendations
+%p
+  %b Two current:
+  = @otg_err.two_current
+
+= link_to 'Edit', edit_otg_err_path(@otg_err)
+\|
+= link_to 'Back', otg_errs_path

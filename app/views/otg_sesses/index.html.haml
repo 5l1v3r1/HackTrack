@@ -1,0 +1,149 @@
+%h1 Listing otg_sesses
+
+%table
+  %thead
+    %tr
+      %th Target
+      %th One
+      %th One description
+      %th One findings
+      %th One liklihood
+      %th One consequence
+      %th One risk
+      %th One recommendations
+      %th One current
+      %th Two
+      %th Two description
+      %th Two findings
+      %th Two liklihood
+      %th Two consequence
+      %th Two risk
+      %th Two recommendations
+      %th Two current
+      %th Three
+      %th Three description
+      %th Three findings
+      %th Three liklihood
+      %th Three consequence
+      %th Three risk
+      %th Three recommendations
+      %th Three current
+      %th Four
+      %th Four description
+      %th Four findings
+      %th Four liklihood
+      %th Four consequence
+      %th Four risk
+      %th Four recommendations
+      %th Four current
+      %th Five
+      %th Five description
+      %th Five findings
+      %th Five liklihood
+      %th Five consequence
+      %th Five risk
+      %th Five recommendations
+      %th Five current
+      %th Six
+      %th Six description
+      %th Six findings
+      %th Six liklihood
+      %th Six consequence
+      %th Six risk
+      %th Six recommendations
+      %th Six current
+      %th Seven
+      %th Seven description
+      %th Seven findings
+      %th Seven liklihood
+      %th Seven consequence
+      %th Seven risk
+      %th Seven recommendations
+      %th Seven current
+      %th Eight
+      %th Eight description
+      %th Eight findings
+      %th Eight liklihood
+      %th Eight consequence
+      %th Eight risk
+      %th Eight recommendations
+      %th Eight current
+      %th
+      %th
+      %th
+
+  %tbody
+    - @otg_sesses.each do |otg_sess|
+      %tr
+        %td= otg_sess.target_id
+        %td= otg_sess.one_id
+        %td= otg_sess.one_description
+        %td= otg_sess.one_findings
+        %td= otg_sess.one_liklihood
+        %td= otg_sess.one_consequence
+        %td= otg_sess.one_risk
+        %td= otg_sess.one_recommendations
+        %td= otg_sess.one_current
+        %td= otg_sess.two_id
+        %td= otg_sess.two_description
+        %td= otg_sess.two_findings
+        %td= otg_sess.two_liklihood
+        %td= otg_sess.two_consequence
+        %td= otg_sess.two_risk
+        %td= otg_sess.two_recommendations
+        %td= otg_sess.two_current
+        %td= otg_sess.three_id
+        %td= otg_sess.three_description
+        %td= otg_sess.three_findings
+        %td= otg_sess.three_liklihood
+        %td= otg_sess.three_consequence
+        %td= otg_sess.three_risk
+        %td= otg_sess.three_recommendations
+        %td= otg_sess.three_current
+        %td= otg_sess.four_id
+        %td= otg_sess.four_description
+        %td= otg_sess.four_findings
+        %td= otg_sess.four_liklihood
+        %td= otg_sess.four_consequence
+        %td= otg_sess.four_risk
+        %td= otg_sess.four_recommendations
+        %td= otg_sess.four_current
+        %td= otg_sess.five_id
+        %td= otg_sess.five_description
+        %td= otg_sess.five_findings
+        %td= otg_sess.five_liklihood
+        %td= otg_sess.five_consequence
+        %td= otg_sess.five_risk
+        %td= otg_sess.five_recommendations
+        %td= otg_sess.five_current
+        %td= otg_sess.six_id
+        %td= otg_sess.six_description
+        %td= otg_sess.six_findings
+        %td= otg_sess.six_liklihood
+        %td= otg_sess.six_consequence
+        %td= otg_sess.six_risk
+        %td= otg_sess.six_recommendations
+        %td= otg_sess.six_current
+        %td= otg_sess.seven_id
+        %td= otg_sess.seven_description
+        %td= otg_sess.seven_findings
+        %td= otg_sess.seven_liklihood
+        %td= otg_sess.seven_consequence
+        %td= otg_sess.seven_risk
+        %td= otg_sess.seven_recommendations
+        %td= otg_sess.seven_current
+        %td= otg_sess.eight_id
+        %td= otg_sess.eight_description
+        %td= otg_sess.eight_findings
+        %td= otg_sess.eight_liklihood
+        %td= otg_sess.eight_consequence
+        %td= otg_sess.eight_risk
+        %td= otg_sess.eight_recommendations
+        %td= otg_sess.eight_current
+        %td= link_to 'Show', otg_sess
+        %td= link_to 'Edit', edit_otg_sess_path(otg_sess)
+        %td= link_to 'Destroy', otg_sess, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Otg sess', new_otg_sess_path

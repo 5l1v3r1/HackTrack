@@ -1,0 +1,53 @@
+%h1 Listing otg_errs
+
+%table
+  %thead
+    %tr
+      %th Target
+      %th One
+      %th One description
+      %th One findings
+      %th One liklihood
+      %th One consequence
+      %th One risk
+      %th One recommendations
+      %th One current
+      %th Two
+      %th Two description
+      %th Two findings
+      %th Two liklihood
+      %th Two consequence
+      %th Two risk
+      %th Two recommendations
+      %th Two current
+      %th
+      %th
+      %th
+
+  %tbody
+    - @otg_errs.each do |otg_err|
+      %tr
+        %td= otg_err.target_id
+        %td= otg_err.one_id
+        %td= otg_err.one_description
+        %td= otg_err.one_findings
+        %td= otg_err.one_liklihood
+        %td= otg_err.one_consequence
+        %td= otg_err.one_risk
+        %td= otg_err.one_recommendations
+        %td= otg_err.one_current
+        %td= otg_err.two_id
+        %td= otg_err.two_description
+        %td= otg_err.two_findings
+        %td= otg_err.two_liklihood
+        %td= otg_err.two_consequence
+        %td= otg_err.two_risk
+        %td= otg_err.two_recommendations
+        %td= otg_err.two_current
+        %td= link_to 'Show', otg_err
+        %td= link_to 'Edit', edit_otg_err_path(otg_err)
+        %td= link_to 'Destroy', otg_err, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Otg err', new_otg_err_path

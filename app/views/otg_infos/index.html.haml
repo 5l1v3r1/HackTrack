@@ -1,0 +1,181 @@
+%h1 Listing otg_infos
+
+%table
+  %thead
+    %tr
+      %th Target
+      %th One
+      %th One description
+      %th One findings
+      %th One liklihood
+      %th One consequence
+      %th One risk
+      %th One recommendations
+      %th One current
+      %th Two
+      %th Two description
+      %th Two findings
+      %th Two liklihood
+      %th Two consequence
+      %th Two risk
+      %th Two recommendations
+      %th Two current
+      %th Three
+      %th Three description
+      %th Three findings
+      %th Three liklihood
+      %th Three consequence
+      %th Three risk
+      %th Three recommendations
+      %th Three current
+      %th Four
+      %th Four description
+      %th Four findings
+      %th Four liklihood
+      %th Four consequence
+      %th Four risk
+      %th Four recommendations
+      %th Four current
+      %th Five
+      %th Five description
+      %th Five findings
+      %th Five liklihood
+      %th Five consequence
+      %th Five risk
+      %th Five recommendations
+      %th Five current
+      %th Six
+      %th Six description
+      %th Six findings
+      %th Six liklihood
+      %th Six consequence
+      %th Six risk
+      %th Six recommendations
+      %th Six current
+      %th Seven
+      %th Seven description
+      %th Seven findings
+      %th Seven liklihood
+      %th Seven consequence
+      %th Seven risk
+      %th Seven recommendations
+      %th Seven current
+      %th Eight
+      %th Eight description
+      %th Eight findings
+      %th Eight liklihood
+      %th Eight consequence
+      %th Eight risk
+      %th Eight recommendations
+      %th Eight current
+      %th Nine
+      %th Nine description
+      %th Nine findings
+      %th Nine liklihood
+      %th Nine consequence
+      %th Nine risk
+      %th Nine recommendations
+      %th Nine current
+      %th Ten
+      %th Ten description
+      %th Ten findings
+      %th Ten liklihood
+      %th Ten consequence
+      %th Ten risk
+      %th Ten recommendations
+      %th Ten current
+      %th
+      %th
+      %th
+
+  %tbody
+    - @otg_infos.each do |otg_info|
+      %tr
+        %td= otg_info.target_id
+        %td= otg_info.one_id
+        %td= otg_info.one_description
+        %td= otg_info.one_findings
+        %td= otg_info.one_liklihood
+        %td= otg_info.one_consequence
+        %td= otg_info.one_risk
+        %td= otg_info.one_recommendations
+        %td= otg_info.one_current
+        %td= otg_info.two_id
+        %td= otg_info.two_description
+        %td= otg_info.two_findings
+        %td= otg_info.two_liklihood
+        %td= otg_info.two_consequence
+        %td= otg_info.two_risk
+        %td= otg_info.two_recommendations
+        %td= otg_info.two_current
+        %td= otg_info.three_id
+        %td= otg_info.three_description
+        %td= otg_info.three_findings
+        %td= otg_info.three_liklihood
+        %td= otg_info.three_consequence
+        %td= otg_info.three_risk
+        %td= otg_info.three_recommendations
+        %td= otg_info.three_current
+        %td= otg_info.four_id
+        %td= otg_info.four_description
+        %td= otg_info.four_findings
+        %td= otg_info.four_liklihood
+        %td= otg_info.four_consequence
+        %td= otg_info.four_risk
+        %td= otg_info.four_recommendations
+        %td= otg_info.four_current
+        %td= otg_info.five_id
+        %td= otg_info.five_description
+        %td= otg_info.five_findings
+        %td= otg_info.five_liklihood
+        %td= otg_info.five_consequence
+        %td= otg_info.five_risk
+        %td= otg_info.five_recommendations
+        %td= otg_info.five_current
+        %td= otg_info.six_id
+        %td= otg_info.six_description
+        %td= otg_info.six_findings
+        %td= otg_info.six_liklihood
+        %td= otg_info.six_consequence
+        %td= otg_info.six_risk
+        %td= otg_info.six_recommendations
+        %td= otg_info.six_current
+        %td= otg_info.seven_id
+        %td= otg_info.seven_description
+        %td= otg_info.seven_findings
+        %td= otg_info.seven_liklihood
+        %td= otg_info.seven_consequence
+        %td= otg_info.seven_risk
+        %td= otg_info.seven_recommendations
+        %td= otg_info.seven_current
+        %td= otg_info.eight_id
+        %td= otg_info.eight_description
+        %td= otg_info.eight_findings
+        %td= otg_info.eight_liklihood
+        %td= otg_info.eight_consequence
+        %td= otg_info.eight_risk
+        %td= otg_info.eight_recommendations
+        %td= otg_info.eight_current
+        %td= otg_info.nine_id
+        %td= otg_info.nine_description
+        %td= otg_info.nine_findings
+        %td= otg_info.nine_liklihood
+        %td= otg_info.nine_consequence
+        %td= otg_info.nine_risk
+        %td= otg_info.nine_recommendations
+        %td= otg_info.nine_current
+        %td= otg_info.ten_id
+        %td= otg_info.ten_description
+        %td= otg_info.ten_findings
+        %td= otg_info.ten_liklihood
+        %td= otg_info.ten_consequence
+        %td= otg_info.ten_risk
+        %td= otg_info.ten_recommendations
+        %td= otg_info.ten_current
+        %td= link_to 'Show', otg_info
+        %td= link_to 'Edit', edit_otg_info_path(otg_info)
+        %td= link_to 'Destroy', otg_info, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Otg info', new_otg_info_path

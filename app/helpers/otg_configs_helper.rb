@@ -1,0 +1,2 @@
+module OtgConfigsHelper
+end

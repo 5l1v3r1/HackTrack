@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Role:
+  = @target.role
+%p
+  %b Hostname:
+  = @target.hostname
+%p
+  %b Ip address:
+  = @target.ip_address
+%p
+  %b Fqdn:
+  = @target.fqdn
+%p
+  %b Project:
+  = @target.project_id
+
+= link_to 'Edit', edit_target_path(@target)
+\|
+= link_to 'Back', targets_path

@@ -1,0 +1,12 @@
+= simple_form_for(@target) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :role
+    = f.input :hostname
+    = f.input :ip_address
+    = f.input :fqdn
+    = f.input :project_id
+
+  .form-actions
+    = f.button :submit

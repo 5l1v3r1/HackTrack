@@ -1,0 +1,133 @@
+%h1 Listing otg_idents
+
+%table
+  %thead
+    %tr
+      %th Target
+      %th One
+      %th One description
+      %th One findings
+      %th One liklihood
+      %th One consequence
+      %th One risk
+      %th One recommendations
+      %th One current
+      %th Two
+      %th Two description
+      %th Two findings
+      %th Two liklihood
+      %th Two consequence
+      %th Two risk
+      %th Two recommendations
+      %th Two current
+      %th Three
+      %th Three description
+      %th Three findings
+      %th Three liklihood
+      %th Three consequence
+      %th Three risk
+      %th Three recommendations
+      %th Three current
+      %th Four
+      %th Four description
+      %th Four findings
+      %th Four liklihood
+      %th Four consequence
+      %th Four risk
+      %th Four recommendations
+      %th Four current
+      %th Five
+      %th Five description
+      %th Five findings
+      %th Five liklihood
+      %th Five consequence
+      %th Five risk
+      %th Five recommendations
+      %th Five current
+      %th Six
+      %th Six description
+      %th Six findings
+      %th Six liklihood
+      %th Six consequence
+      %th Six risk
+      %th Six recommendations
+      %th Six current
+      %th Seven
+      %th Seven description
+      %th Seven findings
+      %th Seven liklihood
+      %th Seven consequence
+      %th Seven risk
+      %th Seven recommendations
+      %th Seven current
+      %th
+      %th
+      %th
+
+  %tbody
+    - @otg_idents.each do |otg_ident|
+      %tr
+        %td= otg_ident.target_id
+        %td= otg_ident.one_id
+        %td= otg_ident.one_description
+        %td= otg_ident.one_findings
+        %td= otg_ident.one_liklihood
+        %td= otg_ident.one_consequence
+        %td= otg_ident.one_risk
+        %td= otg_ident.one_recommendations
+        %td= otg_ident.one_current
+        %td= otg_ident.two_id
+        %td= otg_ident.two_description
+        %td= otg_ident.two_findings
+        %td= otg_ident.two_liklihood
+        %td= otg_ident.two_consequence
+        %td= otg_ident.two_risk
+        %td= otg_ident.two_recommendations
+        %td= otg_ident.two_current
+        %td= otg_ident.three_id
+        %td= otg_ident.three_description
+        %td= otg_ident.three_findings
+        %td= otg_ident.three_liklihood
+        %td= otg_ident.three_consequence
+        %td= otg_ident.three_risk
+        %td= otg_ident.three_recommendations
+        %td= otg_ident.three_current
+        %td= otg_ident.four_id
+        %td= otg_ident.four_description
+        %td= otg_ident.four_findings
+        %td= otg_ident.four_liklihood
+        %td= otg_ident.four_consequence
+        %td= otg_ident.four_risk
+        %td= otg_ident.four_recommendations
+        %td= otg_ident.four_current
+        %td= otg_ident.five_id
+        %td= otg_ident.five_description
+        %td= otg_ident.five_findings
+        %td= otg_ident.five_liklihood
+        %td= otg_ident.five_consequence
+        %td= otg_ident.five_risk
+        %td= otg_ident.five_recommendations
+        %td= otg_ident.five_current
+        %td= otg_ident.six_id
+        %td= otg_ident.six_description
+        %td= otg_ident.six_findings
+        %td= otg_ident.six_liklihood
+        %td= otg_ident.six_consequence
+        %td= otg_ident.six_risk
+        %td= otg_ident.six_recommendations
+        %td= otg_ident.six_current
+        %td= otg_ident.seven_id
+        %td= otg_ident.seven_description
+        %td= otg_ident.seven_findings
+        %td= otg_ident.seven_liklihood
+        %td= otg_ident.seven_consequence
+        %td= otg_ident.seven_risk
+        %td= otg_ident.seven_recommendations
+        %td= otg_ident.seven_current
+        %td= link_to 'Show', otg_ident
+        %td= link_to 'Edit', edit_otg_ident_path(otg_ident)
+        %td= link_to 'Destroy', otg_ident, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Otg ident', new_otg_ident_path

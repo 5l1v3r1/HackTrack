@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @project.title
+%p
+  %b Description:
+  = @project.description
+%p
+  %b Scope document name:
+  = @project.scope_document_name
+%p
+  %b Deliverables:
+  = @project.deliverables
+%p
+  %b Effort days:
+  = @project.effort_days
+%p
+  %b Tester name:
+  = @project.tester_name
+
+= link_to 'Edit', edit_project_path(@project)
+\|
+= link_to 'Back', projects_path
