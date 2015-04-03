@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :report]
 
   # GET /projects
   # GET /projects.json
@@ -7,9 +7,21 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
+  # GET /projects
+  # GET /projects.json
+  def report
+    @projects = Project.all
+  end
+
   # GET /projects/1
   # GET /projects/1.json
   def show
+    respond_to do |format|
+      format.html
+      # format.pdf
+      format.json  {render :json => @project.to_json(:include => { :targets => { :include => %w(otg_info otg_config otg_ident otg_authn otg_authz otg_sess otg_inpval otg_err otg_crypst otg_buslogic otg_client) }})}
+
+    end
   end
 
   # GET /projects/new

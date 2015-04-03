@@ -91,6 +91,7 @@ class CreateOtgInpvals < ActiveRecord::Migration
       t.string :eleven_recommendations
       t.boolean :eleven_current
       t.string :ten_id
+      t.string :twelve_id
       t.string :twelve_description
       t.string :twelve_findings
       t.integer :twelve_liklihood

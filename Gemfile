@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 
 
+gem 'pdfkit'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -44,13 +46,17 @@ group :development, :test do
 end
 
 
+gem 'redcarpet'
+gem 'humanize'
+
+
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'upmin-admin'
-
+gem 'unicorn'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19]

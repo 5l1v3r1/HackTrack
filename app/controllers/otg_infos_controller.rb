@@ -28,7 +28,7 @@ class OtgInfosController < ApplicationController
 
     respond_to do |format|
       if @otg_info.save
-        format.html { redirect_to @otg_info, notice: 'Otg info was successfully created.' }
+        format.html { redirect_to @otg_info.target.project, notice: 'Otg info was successfully created.' }
         format.json { render :show, status: :created, location: @otg_info }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class OtgInfosController < ApplicationController
   def update
     respond_to do |format|
       if @otg_info.update(otg_info_params)
-        format.html { redirect_to @otg_info, notice: 'Otg info was successfully updated.' }
+        format.html { redirect_to @otg_info.target.project, notice: 'Otg info was successfully updated.' }
         format.json { render :show, status: :ok, location: @otg_info }
       else
         format.html { render :edit }

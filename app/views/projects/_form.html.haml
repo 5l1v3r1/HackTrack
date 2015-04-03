@@ -1,13 +1,37 @@
-= simple_form_for(@project) do |f|
-  = f.error_notification
+%p#notice= notice
 
-  .form-inputs
-    = f.input :title
-    = f.input :description
-    = f.input :scope_document_name
-    = f.input :deliverables
-    = f.input :effort_days
-    = f.input :tester_name
+%section.feature-pricing
+  %section.section-content.section-pricing#section-pricing 
+    = simple_form_for(@project) do |f|
+      = f.error_notification
+      %section.section-content.section-table#section-table
+        .container
+          .row
+            .span3
+              %h2.section-title Editing Project
+            .span9                                 
+              %table.table.table-striped.table-condensed
+                %tr
+                  %th{:style => "width:25%;"} Title
+                  %td= f.text_field(:title, :label => false, :style => "width:90%;")
+                %tr
+                  %th Description
+                  %td= f.text_field :description, :label => false, :style => "width:90%;"
+                %tr
+                  %th Scope Document Name
+                  %td= f.text_field :scope_document_name, :label => false, :style => "width:90%;"
+                %tr
+                  %th Deliverables
+                  %td= f.text_field :deliverables, :label => false, :style => "width:90%;"
+                %tr
+                  %th Tester Name
+                  %td= f.text_field :tester_name, :label => false, :style => "width:90%;"
+                %tr
+                  %th Effort Days
+                  %td= f.input :effort_days, collection: 1..100, :label => false, :style => "width:90%;"
+                  / %th Severity
+                  /# %td= @otg_sess.send("#{iterator.humanize}_risk")
+          .form-actions
+            = f.button :submit, 'Save', :style => "float:right;"
 
-  .form-actions
-    = f.button :submit
+\

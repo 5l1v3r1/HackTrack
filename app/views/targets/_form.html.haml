@@ -1,12 +1,30 @@
-= simple_form_for(@target) do |f|
-  = f.error_notification
+%p#notice= notice
 
-  .form-inputs
-    = f.input :role
-    = f.input :hostname
-    = f.input :ip_address
-    = f.input :fqdn
-    = f.input :project_id
+%section.feature-pricing
+  %section.section-content.section-pricing#section-pricing 
+    = simple_form_for(@target) do |f|
+      = f.error_notification
+      %section.section-content.section-table#section-table
+        .container
+          .row
+            .span3
+              %h2.section-title Editing Target
+            .span9                                 
+              %table.table.table-striped.table-condensed
+                %tr
+                  %th{:style => "width:25%;"} Role
+                  %td= f.text_field(:role, :label => false, :style => "width:90%;")
+                %tr
+                  %th Hostname
+                  %td= f.text_field :hostname, :label => false, :style => "width:90%;"
+                %tr
+                  %th IP Address
+                  %td= f.text_field :ip_address, :label => false, :style => "width:90%;"
+                %tr
+                  %th FQDN
+                  %td= f.text_field :fqdn, :label => false, :style => "width:90%;"
+                =f.hidden_field(:project_id)
+               
+            = f.button :submit, 'Save', :style => "float:right;"
 
-  .form-actions
-    = f.button :submit
+\

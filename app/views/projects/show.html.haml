@@ -1,24 +1,105 @@
 %p#notice= notice
 
-%p
-  %b Title:
-  = @project.title
-%p
-  %b Description:
-  = @project.description
-%p
-  %b Scope document name:
-  = @project.scope_document_name
-%p
-  %b Deliverables:
-  = @project.deliverables
-%p
-  %b Effort days:
-  = @project.effort_days
-%p
-  %b Tester name:
-  = @project.tester_name
+%section.feature-pricing
+  %section.section-content.section-pricing#section-pricing
+    %section.section-content.section-table#section-table
+      .container
+        .row
+          .span3
+            %h2.section-title
+              =@project.title.titleize
+              / %small Listing all projects
+              %br
+              %small 
+                ="Project ID: #{@project.id}"
+                %br
+                %br
+                = link_to 'Add Target', new_target_path(:project_id => @project.id)
+                %br
+                = link_to 'Generate JSON Report', "#{project_path(@project.id)}.json"
+                %br
+                = link_to 'Generate PDF Report', "#{project_path(@project.id)}/report.pdf"
+                %br
+                %br
+                = link_to 'Edit', edit_project_path(@project)
+                |
+                =link_to 'Destroy', @project, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'Edit', edit_project_path(@project)
-\|
-= link_to 'Back', projects_path
+          .span9
+            %table.table.table-striped.table-condensed
+              %thead
+                %tr
+                  %th Title
+                  %td= @project.title
+                %tr
+                  %th Description
+                  %td= @project.description
+                %tr
+                  %th Scope document name
+                  %td= @project.scope_document_name
+                %tr
+                  %th Deliverables
+                  %td= @project.deliverables
+                %tr
+                  %th Effort days
+                  %td= @project.effort_days
+                %tr
+                  %th Tester name
+                  %td= @project.tester_name
+                  
+
+    -@project.targets.each do |target|           
+      %section.section-content.section-table#section-table
+        .container
+          .row
+            .span3
+              %h2.section-title
+                =target.role.titleize
+                %small
+                  %br
+                  %strong Hostname: 
+                  %br
+                  =target.hostname
+                  %br
+                  %br
+                  %strong IP Address: 
+                  %br
+                  =target.ip_address
+                  %br
+                  %br
+                  %strong FQDN: 
+                  %br
+                  =target.fqdn
+                  %br
+                  %br
+                %small OWASP Findings
+                / TODO make this dynamic based on the host information
+                / %small 
+            .span9
+              -words = {'otg_info'=>'Information Gathering','otg_config'=>'Configuration and Deploy Management Testing','otg_ident'=>'Identity Management Testing','otg_authn'=>'Authentication Testing','otg_authz'=>'Authorization Testing','otg_sess'=>'Session Management Testing','otg_err'=>'Error Handling','otg_crypst'=>'Cryptography','otg_buslogic'=>'Business Logic Testing','otg_client'=>'Client Side Testing','otg_inpval'=>'Input Validation Testing',}
+              - %w(otg_info otg_config otg_ident otg_authn otg_authz otg_sess otg_inpval otg_err otg_crypst otg_buslogic otg_client).each do |section|
+                %h3= words["#{section}"]
+                %table.table.table-striped.table-condensed
+                  %thead
+                    %tr
+                      %th Test ID
+                      %th Description
+                      %th Findings
+                      %th Liklihood
+                      %th Consequence
+                      %th Severity
+                      %th Recommendations
+                      %th
+                  %tbody
+                    - (1..20).each do |iterator|
+                      - if target.send("#{section}").attributes.include?("#{iterator.humanize}_id")                  
+                        %tr
+                          %td= target.send("#{section}").send("#{iterator.humanize}_id")
+                          %td= target.send("#{section}").send("#{iterator.humanize}_description")
+                          %td= target.send("#{section}").send("#{iterator.humanize}_findings")
+                          %td= target.send("#{section}").send("#{iterator.humanize}_liklihood")
+                          %td= target.send("#{section}").send("#{iterator.humanize}_consequence")
+                          %td= target.send("#{section}").send("#{iterator.humanize}_risk")
+                          %td= target.send("#{section}").send("#{iterator.humanize}_recommendations")
+                          %td= link_to 'Edit', "/#{section.pluralize}/#{target.send("#{section}").id}/edit"
+           

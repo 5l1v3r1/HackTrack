@@ -1,0 +1,168 @@
+!!! 5
+/[if lt IE 7] <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7">
+/[if IE 7]    <html lang="en" class="no-js lt-ie9 lt-ie8">
+/[if IE 8]    <html lang="en" class="no-js lt-ie9">
+<!--[if gt IE 8]><!-->
+%html{'lang' => 'en', 'class' => 'no-js'}<>
+	<!--<![endif]-->
+	-if !request.env["REQUEST_PATH"].include? "/report"
+
+		%head
+			%meta{"charset" => "utf-8"}
+			%title Page sidebar content
+			%meta{"content" => "width=device-width, initial-scale=1.0", "name" => "viewport"}
+			%meta{"content" => "", "name" => "description"}
+			%meta{"content" => "ppparticularity.com", "name" => "author"}
+
+
+
+			%link{"href" => "ico/favicon.ico", "rel" => "shortcut icon"}
+			%link{"href" => "ico/apple-touch-icon.png", "rel" => "apple-touch-icon"}
+			%link{"href" => "ico/apple-touch-icon-72x72.png", "rel" => "apple-touch-icon", "sizes" => "72x72"}
+			%link{"href" => "ico/apple-touch-icon-114x114.png", "rel" => "apple-touch-icon", "sizes" => "114x114"}
+
+
+			=stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+			= javascript_include_tag 'application', 'data-turbolinks-track' => true
+			= csrf_meta_tags
+
+			= javascript_include_tag 'modernizr.min.js'
+			= javascript_include_tag 'jquery.min.js'
+			<!-- =javascript_include_tag 'jquery.ui.map.min.js' -->
+			=javascript_include_tag 'bootstrap.min.js'
+			<!-- =javascript_include_tag 'jquery.fancybox.min.js' -->
+			<!-- =javascript_include_tag 'jquery.hoverdir.min.js' -->
+			=javascript_include_tag 'jquery.isotope.min.js'
+			=javascript_include_tag 'jquery.masonry.min.js'
+			<!-- =javascript_include_tag 'jquery.fatvids.min.js' -->
+			<!-- =javascript_include_tag 'jquery.flexslider.min.js' -->
+			=javascript_include_tag 'script.js'
+
+
+
+
+
+
+
+
+
+
+
+
+		%body.page-sidebar-content
+
+
+			/ .................................... $header ....................................
+			%header.navbar-fixed-top
+				.container
+					.navbar
+						.navbar-inner
+							%a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+								%i.icon-reorder
+
+							%a.brand.span3{:href => "index.html"}
+								/ %img{:src => "/assets/logo-t1.png", :alt => ""}/
+								%h3{:style => "color:white;"} HackTrack
+
+							%nav.nav-collapse.collapse
+								%ul.nav.primary-nav.pull-right
+									
+									%li.active.dropdown
+										%a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
+											Projects
+											%b.caret
+										%ul.dropdown-menu
+											%li<
+												%a{:href => "/projects"} Projects
+											%li<
+												%a{:href => "/projects/new"} New Project
+									%li.dropdown
+										%a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
+											Resources
+											%b.caret
+										%ul.dropdown-menu
+											%li<
+												%a{:href => "https://www.owasp.org/index.php/OWASP_Testing_Guide_v4_Table_of_Contents"} OWASP Testing Guide
+											/ %li.active<
+											%li
+												%a{:href => "https://www.owasp.org/index.php/Top_10_2013-Top_10"} Owasp Top 10
+											
+									
+
+
+			/ .................................... $breadcrumb ....................................
+			%section.section-breadcrumb.section-color-graylighter
+				.container
+					%ul.breadcrumb
+						%li<
+							%a{:href => "/"} Home
+							%span.divider> /
+						%li.active
+							= "#{request.path.gsub('/',' ').titleize}"
+
+
+
+			= yield
+
+			/ .................................... $footer ....................................
+			%footer.section-color-primarydark
+				.container
+					.row
+						.span3
+							.widget
+								/ %address
+						/ 			%strong Twitter, Inc.
+						/ 			%br/
+						/ 			795 Folsom Ave, Suite 600
+						/ 			%br/
+						/ 			San Francisco, CA 94107
+						/ 			%br/
+						/ 			%abbr{:title => "Phone"} P:
+						/ 			%a{:href => "#"} (123) 456-7890
+						.span3
+							.widget
+						/ 		%h5 Newsletter
+						/ 		%p Vel assumenda excepturi nostrum tenetur alias quibusdam maiores.
+						/ 		%form.form-vertical#newsletter-form
+						/ 			.control-group
+						/ 				%label{:for => "newsletter-email"}
+						/ 				%input.span3#newsletter-email{:type => "email", "placeholder" => "email"}/
+						/ 				%span.help-inline Insert valid email
+						/ 			%button.btn.btn-small{:type => "submit"} Subscribe
+						/ 	.widget
+						/ 		%h5 Follow us
+						/ 		%p.btn-group
+						/ 			%a.btn.btn-link{:href => "#"}
+						/ 				%i.icon-large.icon-facebook
+						/ 			%a.btn.btn-link{:href => "#"}
+						/ 				%i.icon-large.icon-twitter
+						/ 			%a.btn.btn-link{:href => "#"}
+						/ 				%i.icon-large.icon-linkedin
+						/ 			%a.btn.btn-link{:href => "#"}
+						/ 				%i.icon-large.icon-google-plus
+						.span4l
+							.widget
+								%h5 If you are enjoying this product, please consider donating some BitCoins 
+								:markdown
+									BitCoin wallet:  
+									**239847293847**
+								
+
+						
+
+
+
+
+			/ .................................... $post-footer ....................................
+			.post-footer.section-content.section-content-mini.section-color-graydark
+				.container
+					%p.pull-right
+						Change license to free to use or whatever
+					%p &copy; Tres Acton 2015 - All rights reserved
+
+
+
+
+
+	-else
+		=yield

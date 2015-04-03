@@ -26,6 +26,14 @@ class CreateOtgAuthzs < ActiveRecord::Migration
       t.integer :three_risk
       t.string :three_recommendations
       t.boolean :three_current
+      t.string :four_id
+      t.string :four_description
+      t.string :four_findings
+      t.integer :four_liklihood
+      t.integer :four_consequence
+      t.integer :four_risk
+      t.string :four_recommendations
+      t.boolean :four_current
 
       t.timestamps null: false
     end

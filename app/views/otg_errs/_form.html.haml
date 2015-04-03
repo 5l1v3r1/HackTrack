@@ -1,24 +1,39 @@
-= simple_form_for(@otg_err) do |f|
-  = f.error_notification
+%p#notice= notice
 
-  .form-inputs
-    = f.input :target_id
-    = f.input :one_id
-    = f.input :one_description
-    = f.input :one_findings
-    = f.input :one_liklihood
-    = f.input :one_consequence
-    = f.input :one_risk
-    = f.input :one_recommendations
-    = f.input :one_current
-    = f.input :two_id
-    = f.input :two_description
-    = f.input :two_findings
-    = f.input :two_liklihood
-    = f.input :two_consequence
-    = f.input :two_risk
-    = f.input :two_recommendations
-    = f.input :two_current
+%section.feature-pricing
+  %section.section-content.section-pricing#section-pricing 
+    = simple_form_for(@otg_err) do |f|
+      = f.error_notification
+      %section.section-content.section-table#section-table
+        .container
+          .row
+            .span3
+              -target = @otg_err.target
+              %h2.section-title Editing: Testing for Error Handling
+            .span9     
+              - (1..20).each do |iterator|
+                - if @otg_err.attributes.include?("#{iterator.humanize}_id")   
+                            
+                  %h3= @otg_err.send "#{iterator.humanize}_id" 
+                  %table.table.table-striped.table-condensed
+                    %tr
+                      %th{:style => "width:25%;"} Description
+                      %td{:style => "width:75%;"}= f.text_area("#{iterator.humanize}_description", :style => "width:90%;")
+                    %tr
+                      %th Findings
+                      %td= f.text_area("#{iterator.humanize}_findings", :style => "width:90%;")
+                    %tr
+                      %th Recommendations
+                      %td= f.text_area("#{iterator.humanize}_recommendations", :style => "width:90%")
+                    %tr
+                      %th Liklihood
+                      %td{:style=>"width:5px;"}= f.input "#{iterator.humanize}_liklihood", collection: 1..3, :label => false
+                    %tr
+                      %th Consequence
+                      %td= f.input "#{iterator.humanize}_consequence", collection: 1..3, :label => false
+                      / %th Severity
+                      /# %td= @otg_err.send("#{iterator.humanize}_risk")
+              .form-actions
+                = f.button :submit, 'Save'
 
-  .form-actions
-    = f.button :submit
+\

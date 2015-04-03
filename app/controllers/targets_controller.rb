@@ -15,6 +15,7 @@ class TargetsController < ApplicationController
   # GET /targets/new
   def new
     @target = Target.new
+    @target.project_id = params[:project_id]
   end
 
   # GET /targets/1/edit
@@ -28,7 +29,8 @@ class TargetsController < ApplicationController
 
     respond_to do |format|
       if @target.save
-        format.html { redirect_to @target, notice: 'Target was successfully created.' }
+        @target.build_otg
+        format.html { redirect_to @target.project, notice: 'Target was successfully created.' }
         format.json { render :show, status: :created, location: @target }
       else
         format.html { render :new }
